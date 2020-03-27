@@ -3,7 +3,7 @@
 const Hapi = require('@hapi/hapi');
 const Path = require('path');
 const cookieParamHandler = require("cookie-param-handler").Handler
-const cssHandler = require("..").Handler
+const cssHandler = require("cookie-css").Handler
 
 const start = async () => {
 
@@ -26,23 +26,25 @@ const start = async () => {
 
     await server.register(require('@hapi/inert'));
 
-    server.route([{
-        method: '*',
-        path: '/static/{param?}',
-        options: {
-            pre: [cookieParamHandler()],
-        },
-        handler: {
-            directory: {
-                path: Path.join(__dirname, 'static'),
-                listing: true,
+    server.route([
+        {
+            method: 'GET',
+            path: '/css',
+            handler: cssHandler()
+        }, {
+            method: '*',
+            path: '/static/{param?}',
+            options: {
+                pre: [cookieParamHandler(cookieOptions={isSecure:false})],
+            },
+            handler: {
+                directory: {
+                    path: Path.join(__dirname, 'static'),
+                    listing: true,
+                }
             }
-        }
-    }, {
-        method: 'GET',
-        path: '/css',
-        handler: cssHandler()
-    }]);
+        },
+    ]);
     await server.start();
     console.log('Server running at:', server.info.uri);
 };

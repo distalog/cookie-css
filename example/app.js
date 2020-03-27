@@ -35,7 +35,9 @@ const start = async () => {
             method: '*',
             path: '/static/{param?}',
             options: {
-                pre: [cookieParamHandler(cookieOptions={isSecure:false})],
+                pre: [cookieParamHandler({isSecure:false,
+                                          path: '/css'
+                                         })],
             },
             handler: {
                 directory: {

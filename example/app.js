@@ -2,8 +2,7 @@
 
 const Hapi = require('@hapi/hapi');
 const Path = require('path');
-const cookieParamHandler = require("@distalog/cookie-param-handler").Handler
-//const cssHandler = require("@distalog/cookie-css").Handler
+const cookieParamHandler = require("cookie-param-handler").Handler
 const cssHandler = require("..").Handler
 
 const start = async () => {
@@ -11,7 +10,14 @@ const start = async () => {
     const server = Hapi.server({
         host: 'localhost',
         port: 3000,
+        debug: {
+            request: '*',
+            log: '*'
+        },
         routes: {
+            log: {
+                collect: true
+            },
             files: {
                 relativeTo: "/",
             },
@@ -20,7 +26,7 @@ const start = async () => {
 
     await server.register(require('@hapi/inert'));
 
-    server.route({
+    server.route([{
         method: '*',
         path: '/static/{param?}',
         options: {
@@ -36,7 +42,7 @@ const start = async () => {
         method: 'GET',
         path: '/css',
         handler: cssHandler()
-    });
+    }]);
     await server.start();
     console.log('Server running at:', server.info.uri);
 };

@@ -36,6 +36,7 @@ const start = async () => {
             path: '/static/{param?}',
             options: {
                 pre: [cookieParamHandler({isSecure:false,
+                                          // Make sure path points to CSS endpoint
                                           path: '/css'
                                          })],
             },

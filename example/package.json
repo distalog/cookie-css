@@ -4,10 +4,10 @@
     "description": "Cookie Example",
     "author": "didier@distalog.ch",
     "dependencies": {
+        "@distalog/cookie-css": "^1.0.0",
+        "@distalog/cookie-param-handler": "^1.0.12",
         "@hapi/hapi": "^19.1.1",
-        "@hapi/inert": "^6.0.1",
-        "cookie-css": "github:distalog/cookie-css",
-        "cookie-param-handler": "github:distalog/cookie-param-handler"
+        "@hapi/inert": "^6.0.1"
     },
     "main": "app.js",
     "scripts": {

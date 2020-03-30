@@ -1,6 +1,6 @@
 {
     "name": "@distalog/cookie-css",
-    "version": "0.0.1",
+    "version": "1.0.1",
     "description": "Cookie CSS Handler: inject CSS from cookies.",
     "author": "didier@distalog.ch",
     "scripts": {
@@ -16,14 +16,19 @@
     },
     "keywords": [
         "cookie",
-        "CSS"
+        "CSS",
+        "hapi",
+        "hapijs",
+        "consent",
+        "GDPR"
     ],
-    "license": "BSD",
+    "license": "BSD-3-Clause",
     "bugs": {
         "url": "https://github.com/distalog/cookie-css/issues"
     },
     "homepage": "https://github.com/distalog/cookie-css#readme",
+    "private": false,
     "publishConfig": {
-        "registry":"https://npm.pkg.github.com/"
+        "access": "public"
     }
 }

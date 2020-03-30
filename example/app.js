@@ -2,8 +2,8 @@
 
 const Hapi = require('@hapi/hapi');
 const Path = require('path');
-const cookieParamHandler = require("cookie-param-handler").Handler
-const cssHandler = require("cookie-css").Handler
+const cookieParamHandler = require("@distalog/cookie-param-handler").Handler
+const cssHandler = require("@distalog/cookie-css").Handler
 
 const start = async () => {
 

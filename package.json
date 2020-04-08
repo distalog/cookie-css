@@ -1,11 +1,12 @@
 {
     "name": "@distalog/cookie-css",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Cookie CSS Handler: inject CSS from cookies.",
     "author": "didier@distalog.ch",
     "scripts": {
         "build": "git pull && npm install",
-        "build-prod": "npm install"
+        "build-prod": "npm install",
+        "test": "./node_modules/@hapi/lab/bin/lab"
     },
     "directories": {
         "example": "example"
@@ -30,5 +31,12 @@
     "private": false,
     "publishConfig": {
         "access": "public"
+    },
+    "devDependencies": {
+        "@hapi/code": "^8.0.1",
+        "@hapi/lab": "^22.0.4"
+    },
+    "dependencies": {
+        "@hapi/hapi": "^19.1.1"
     }
 }

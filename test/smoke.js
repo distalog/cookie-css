@@ -24,5 +24,5 @@ lab.test('returns css body from cookie', async () => {
         },
     })
     expect(response.statusCode).to.equal(200)
-    expect(response.payload).to.equal("foo\n ")
+    expect(response.payload).to.equal("foo\n")
 });

@@ -1,6 +1,6 @@
 {
     "name": "@distalog/cookie-css",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Cookie CSS Handler: inject CSS from cookies.",
     "author": "didier@distalog.ch",
     "scripts": {
